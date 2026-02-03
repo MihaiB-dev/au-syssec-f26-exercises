@@ -12,9 +12,9 @@ The introduction to the PPM file format is **JUST for reference - The code shown
 Your job is to extend the `ppmcrypt.py` file provided. All the places to extend are denoted by the following comments: 
 
 ```
-\# --------- add your code here -------- 
+# --------- add your code here -------- 
 ... 
-\# ----- end add your code here --------
+# ----- end add your code here --------
 ```
 
 You are to implement encryption and decryption using the different modes of operation, and perform a few manipulations on the ciphertexts. 
@@ -135,7 +135,7 @@ image.encrypt(key, 'ecb')
 image.write_to_file(open('image_encrypted.ppm', 'wb'))
 ```
 
-Run the function named 'test1` and open the encrypted image. What do you observe?
+Run the function named 'task1` and open the encrypted image. What do you observe?
 
 Try to modify encrypted pictures, and observe how the picture has changed after decryption.
 For this you can use a hex editor, or you just access the `.data` property of
@@ -143,7 +143,7 @@ an `PPMImage` instance:
 ```python
 image.data[42] = 0x42  # set the byte at position 42 to the value 0x42
 ```
-Extend the function named `test1` as follows:
+Extend the function named `task1` as follows:
 ```python
 image.encrypt(key, 'ecb')
 image.data[42] = 0x42  # This line has been added.
