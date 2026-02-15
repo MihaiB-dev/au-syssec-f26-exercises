@@ -1,6 +1,18 @@
 # Exercises: Certificates and MACs
 
+<!-- 
+Server certificate
+subject=C = US, ST = California, L = Menlo Park, O = "Meta Platforms, Inc.", CN = *.www.instagram.com
+issuer=C = US, O = DigiCert Inc, CN = DigiCert Global G2 TLS RSA SHA256 2020 CA1
 
+
+
+cert_0.pem: OK
+Chain:
+depth=0: C = US, ST = California, L = Menlo Park, O = "Meta Platforms, Inc.", CN = *.www.instagram.com (untrusted)
+depth=1: C = US, O = DigiCert Inc, CN = DigiCert Global G2 TLS RSA SHA256 2020 CA1 (untrusted)
+depth=2: C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert Global Root G2
+ -->
 ## Exercise 1: Textbook RSA in Python
 
 For this exercise, you must again need the PyCryptodome library we used last week.
