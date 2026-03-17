@@ -1,19 +1,17 @@
 #!/bin/bash
 
-COMMIT_MSG=${1:-".."}
+# Ensure a folder name was provided
+if [ -z "$1" ]; then
+    echo "Usage: ./sync_ex.sh folder_name"
+    exit 1
+fi
 
-# 1. Download the latest changes from class
+FOLDER_NAME="$1"
+
+# 1. Download the latest changes from upstream
 git fetch upstream
 
-# 2. Merge the changes into my local branch
-# The --no-edit flag skips the manual commit message prompt for the merge
-git merge upstream/main --no-edit
+# 2. Update only the specified folder
+git checkout upstream/main -- "$FOLDER_NAME"
 
-# 3. Stage all of my new exercise files
-git add .
-
-# 4. Commit with the literal message ".."
-git commit -m "$COMMIT_MSG"
-
-# 5. Push everything to my personal GitHub repository
-git push origin main
+echo "Successfully updated $FOLDER_NAME from upstream/main"
